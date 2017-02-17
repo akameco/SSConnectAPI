@@ -2,9 +2,11 @@
 
 ## 概要
 SSをまとめるAPI
+
 ## バージョン
 * ruby  2.4.0
 * rails 5.0.1
+
 ## setup
 1. bundle install
 2. bundle exec rails db:migrate
