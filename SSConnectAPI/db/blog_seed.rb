@@ -1,0 +1,1 @@
+Blog.create(:title => 'エレファント速報',)
