@@ -62,3 +62,6 @@ gem 'acts-as-taggable-on', '~> 4.0'
 
 # API Responce
 gem 'active_model_serializers', '~> 0.10.0'
+
+# piging kaminari
+gem 'kaminari'
