@@ -1,4 +1,5 @@
-class ArticleController < ApplicationController
+module V1
+  class ArticleController < ApplicationController
   #     pages GET    /pages(.:format)          pages#index
   #           POST   /pages(.:format)          pages#create
   #  new_page GET    /pages/new(.:format)      pages#new
@@ -45,5 +46,5 @@ class ArticleController < ApplicationController
 
   end
 
-
+  end
 end
