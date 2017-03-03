@@ -9,6 +9,8 @@ SSをまとめるAPI
 
 ## setup
 1. bundle install
-2. bundle exec rails db:migrate
-3. bundle exec rails db:seed
-4. bundle exec rails s
+2. rails db:migrate
+3. rails db:seed
+4. rails sample:blog_insert
+5. rails crawl:rss
+6. bundle exec rails s
