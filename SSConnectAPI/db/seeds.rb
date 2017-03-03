@@ -6,16 +6,3 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'sample@cps.im.dendai.ac.jp', password: 'rubirubiSS', password_confirmation: 'rubirubiSS')
-5.times do |i|
-  blog = Blog.create(
-      :title => "TitleSokuho#{i}",
-      :url => Faker::Internet.url,
-      :rss => "#{Faker::Internet.url}/rss"
-  )
-  100.times do |j|
-    blog.articles.create(
-        :title => "#{Faker::Food.ingredient} #{j}",
-        :posted_at => Faker::Time.between(7.days.ago, Date.today, :all)
-    )
-  end
-end
