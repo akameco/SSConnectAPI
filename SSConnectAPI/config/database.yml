@@ -22,4 +22,9 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: zanryu_neo_db
+  adapter: mysql2
+  encoding: utf8
+  host: mysql
+  port: 3306
+  url: ENV['RAILS_DATABASE_URL']
