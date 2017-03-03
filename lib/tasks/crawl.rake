@@ -4,6 +4,7 @@ namespace :crawl do
       puts blog.title
       feed = Feedjira::Feed.fetch_and_parse(blog.rss)
       feed.entries.each do |entry|
+        next if Article.where(url: entry.url).exists?
         blog.articles.create(
             title: entry.title,
             url: entry.url,
