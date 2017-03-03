@@ -71,3 +71,7 @@ gem 'grape'
 
 # faker
 gem 'faker'
+
+gem "feedjira"
+
+gem 'whenever', :require => false
