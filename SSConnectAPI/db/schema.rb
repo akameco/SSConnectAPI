@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170225183917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["blog_id"], name: "index_articles_on_blog_id"
+    t.index ["posted_at"], name: "index_articles_on_posted_at"
   end
 
   create_table "blogs", force: :cascade do |t|

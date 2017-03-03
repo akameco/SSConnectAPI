@@ -7,5 +7,6 @@ class CreateArticles < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :articles, :posted_at
   end
 end
