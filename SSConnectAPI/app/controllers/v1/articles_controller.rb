@@ -16,7 +16,7 @@ module V1
       else
         p = params[:page].to_i
       end
-      @articles = Article.page(p)
+      @articles = Article.order('posted_at DESC').page(p)
       render json: @articles, each_serializer: V1::ArticleSerializer, root: nil
     end
   end
