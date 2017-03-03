@@ -1,5 +1,5 @@
 module V1
-  class ArticleController < ApplicationController
+  class ArticlesController < ApplicationController
   #     pages GET    /pages(.:format)          pages#index
   #           POST   /pages(.:format)          pages#create
   #  new_page GET    /pages/new(.:format)      pages#new
