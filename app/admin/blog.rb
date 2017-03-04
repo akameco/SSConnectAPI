@@ -1,5 +1,5 @@
 ActiveAdmin.register Blog do
-  permit_params :title, :url
+  permit_params :title, :url, :rss
 
   index do
     selectable_column
