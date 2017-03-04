@@ -7,8 +7,8 @@ ActiveAdmin.register Article do
     id_column
     column :title
     column :url
-    column :posted_at
     column :blog_id
+    column :posted_at
     column :updated_at
     column :created_at
     actions
@@ -16,8 +16,8 @@ ActiveAdmin.register Article do
 
   filter :title
   filter :url
-  filter :posted_at
   filter :blog_id
+  filter :posted_at
   filter :updated_at
   filter :created_at
 
