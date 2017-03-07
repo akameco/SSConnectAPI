@@ -11,7 +11,9 @@ namespace :crawl do
             posted_at: entry.last_modified
         )
         doc = Nokogiri::HTML(open(article.url))
-        p doc.css(blog.selector).map {|a| a.text}
+        p (doc.css(blog.selector).map {|a| a.text})[0]
+        article.category_list.add((doc.css(blog.selector).map {|a| a.text}))
+        article.save
       end
     end
   end

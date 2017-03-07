@@ -1,6 +1,6 @@
 module V1
   class ArticleSerializer < ActiveModel::Serializer
-    attributes :id, :title, :blog_id, :posted_at, :url
+    attributes :id, :title, :blog_id, :posted_at, :url, :category_list
 
     has_one :blog, serealizer: BlogSerializer
 
