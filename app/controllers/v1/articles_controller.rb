@@ -16,8 +16,15 @@ module V1
       else
         p = params[:page].to_i
       end
-      @articles = Article.order('posted_at DESC').page(p)
-      render json: @articles, each_serializer: V1::ArticleSerializer, root: nil
+
+      if params[:blog_id].nil?
+        articles = Article.all
+      else
+        articles = Blog.find(params[:blog_id]).articles
+      end
+
+      @res = articles.order('posted_at DESC').page(p)
+      render json: @res, each_serializer: V1::ArticleSerializer, root: nil
     end
   end
 end

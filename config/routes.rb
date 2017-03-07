@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :v1, defaults: {format: :json } do
     resources :articles
+    resources :blogs
     get '*path', controller: 'application', action: 'render_404'
   end
 
