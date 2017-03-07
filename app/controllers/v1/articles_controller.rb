@@ -23,6 +23,10 @@ module V1
         articles = Blog.find(params[:blog_id]).articles
       end
 
+      unless params[:q].nil?
+        articles = articles.where('title LIKE ?', "%#{params[:q]}%")
+      end
+
       res = articles.includes(:blog).order('posted_at DESC').page(p)
       render json: res, each_serializer: V1::ArticleSerializer, root: nil
     end
