@@ -25,4 +25,8 @@ namespace :sample do
     end
   end
 
+  task :user_insert => :environment do
+    AdminUser.create!(email: 'sample@cps.im.dendai.ac.jp', password: 'rubirubiSS', password_confirmation: 'rubirubiSS')
+  end
+
 end
