@@ -23,7 +23,7 @@ module V1
         articles = Blog.find(params[:blog_id]).articles
       end
 
-      res = articles.order('posted_at DESC').page(p)
+      res = articles.includes(:blog).order('posted_at DESC').page(p)
       render json: res, each_serializer: V1::ArticleSerializer, root: nil
     end
   end
