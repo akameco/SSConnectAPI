@@ -4,10 +4,11 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :url
       t.datetime :posted_at
-      t.references :blog, foreign_key: true
+      t.references :blog, foreign_key: true, index: true
 
       t.timestamps
     end
     add_index :articles, :posted_at
+    add_index :articles, :title
   end
 end
