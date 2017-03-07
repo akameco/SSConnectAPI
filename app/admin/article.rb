@@ -1,6 +1,6 @@
 ActiveAdmin.register Article do
 
-  permit_params :title, :url
+  permit_params :title, :url, :category_list
 
   index do
     selectable_column
@@ -11,6 +11,7 @@ ActiveAdmin.register Article do
     column :posted_at
     column :updated_at
     column :created_at
+    column :category_list
     actions
   end
 
@@ -20,5 +21,6 @@ ActiveAdmin.register Article do
   filter :posted_at
   filter :updated_at
   filter :created_at
+  filter :category_list
 
 end
