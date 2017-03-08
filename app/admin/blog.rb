@@ -7,6 +7,7 @@ ActiveAdmin.register Blog do
     column :title
     column :url
     column :rss
+    column :selector
     column :updated_at
     column :created_at
     actions
