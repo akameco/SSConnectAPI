@@ -12,7 +12,9 @@
 #
 
 FactoryGirl.define do
-  factory :article, class: Article do
+  factory :article do
+    url { FFaker::Internet.http_url + '/' + FFaker::Internet.user_name }
+    posted_at { Faker::Time.between(2.weeks.ago, Date.today) }
   end
 
 end

@@ -42,6 +42,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
   gem 'pry-rails'
+  gem 'faker'
   gem 'ffaker'
   gem 'rspec-rails'
 end
@@ -78,9 +79,6 @@ gem 'kaminari'
 # grape api
 gem 'grape'
 
-# faker
-gem 'faker'
-
-gem "feedjira"
+gem 'feedjira'
 
 gem 'whenever', :require => false

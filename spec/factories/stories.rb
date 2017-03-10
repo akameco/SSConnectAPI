@@ -9,7 +9,7 @@
 #
 
 FactoryGirl.define do
-  factory :story, class: Story do
-    title { 'hoge' }
+  factory :story do
+    title { "#{FFaker::NameJA.name}「あいうえお」#{FFaker::NameJA.name}「かきくけこ」" }
   end
 end

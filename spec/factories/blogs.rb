@@ -12,7 +12,10 @@
 #
 
 FactoryGirl.define do
-  factory :blog, class: Blog do
+  factory :blog do
+    title { FFaker::NameJA.last_name + FFaker::NameJA.last_name + '速報' }
+    url { FFaker::Internet.http_url }
+    rss { "#{FFaker::Internet.http_url}/rss" }
   end
 
 end
