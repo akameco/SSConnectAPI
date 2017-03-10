@@ -9,18 +9,18 @@ AdminUser.create!(email: 'sample@cps.im.dendai.ac.jp', password: 'rubirubiSS', p
 
 stories = []
 100.times do |j|
-  story = create(:story)
+  story = FactoryGirl.create(:story)
   (1..5).to_a.sample.times do
-    story.tags << FFaker::Food.fruit
+    story.tag_list << FFaker::Food.fruit
   end
   stories << story
 end
 
 10.times do |i|
-  blog = create(:blog)
+  blog = FactoryGirl.create(:blog)
 
   100.times do |j|
-    create(:article, blog: blog, story: stories[j])
+    FactoryGirl.create(:article, blog: blog, story: stories[j])
   end
   puts i
 end
