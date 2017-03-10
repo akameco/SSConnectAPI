@@ -11,6 +11,8 @@
 #  updated_at :datetime         not null
 #
 
-class Blog < ApplicationRecord
-  has_many :articles
+FactoryGirl.define do
+  factory :blog, class: Blog do
+  end
+
 end

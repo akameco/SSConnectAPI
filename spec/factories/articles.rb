@@ -1,16 +1,18 @@
 # == Schema Information
 #
-# Table name: blogs
+# Table name: articles
 #
 #  id         :integer          not null, primary key
-#  title      :string
 #  url        :string
-#  rss        :string
-#  selector   :string
+#  posted_at  :datetime
+#  blog_id    :integer
+#  story_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Blog < ApplicationRecord
-  has_many :articles
+FactoryGirl.define do
+  factory :article, class: Article do
+  end
+
 end
