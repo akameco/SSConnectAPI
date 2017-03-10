@@ -1,16 +1,15 @@
 # == Schema Information
 #
-# Table name: blogs
+# Table name: stories
 #
 #  id         :integer          not null, primary key
 #  title      :string
-#  url        :string
-#  rss        :string
-#  selector   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Blog < ApplicationRecord
-  has_many :articles
+FactoryGirl.define do
+  factory :story do
+    title { "#{FFaker::NameJA.name}「あいうえお」#{FFaker::NameJA.name}「かきくけこ」" }
+  end
 end

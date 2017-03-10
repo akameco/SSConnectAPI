@@ -11,6 +11,11 @@
 #  updated_at :datetime         not null
 #
 
-class Blog < ApplicationRecord
-  has_many :articles
+FactoryGirl.define do
+  factory :blog do
+    title { FFaker::NameJA.last_name + FFaker::NameJA.last_name + '速報' }
+    url { FFaker::Internet.http_url }
+    rss { "#{FFaker::Internet.http_url}/rss" }
+  end
+
 end

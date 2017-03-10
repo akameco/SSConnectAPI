@@ -11,7 +11,10 @@
 #  updated_at :datetime         not null
 #
 
-class Article < ApplicationRecord
-  belongs_to :blog, :foreign_key => :blog_id
-  belongs_to :story, :foreign_key => :story_id
+FactoryGirl.define do
+  factory :article do
+    url { FFaker::Internet.http_url + '/' + FFaker::Internet.user_name }
+    posted_at { Faker::Time.between(2.weeks.ago, Date.today) }
+  end
+
 end

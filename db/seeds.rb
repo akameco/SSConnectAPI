@@ -7,18 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'sample@cps.im.dendai.ac.jp', password: 'rubirubiSS', password_confirmation: 'rubirubiSS')
 
-10.times do |i|
-  blog = Blog.create(
-      :title => "TitleSokuho#{i}",
-      :url => Faker::Internet.url,
-      :rss => "#{Faker::Internet.url}/rss"
-  )
-  puts i
-  1000.times do |j|
-    blog.articles.create(
-        :title => "#{Faker::Food.ingredient} #{j}",
-        :url => Faker::Internet.url,
-        :posted_at => Faker::Time.between(2.years.ago, Date.today, :all)
-    )
+stories = []
+100.times do |j|
+  story = FactoryGirl.create(:story)
+  (1..5).to_a.sample.times do
+    story.tag_list << FFaker::Food.fruit
   end
+  stories << story
+end
+
+10.times do |i|
+  blog = FactoryGirl.create(:blog)
+
+  100.times do |j|
+    FactoryGirl.create(:article, blog: blog, story: stories[j])
+  end
+  puts i
 end

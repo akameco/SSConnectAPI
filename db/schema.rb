@@ -44,15 +44,15 @@ ActiveRecord::Schema.define(version: 20170225155843) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.string   "title"
     t.string   "url"
     t.datetime "posted_at"
     t.integer  "blog_id"
+    t.integer  "story_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["blog_id"], name: "index_articles_on_blog_id"
     t.index ["posted_at"], name: "index_articles_on_posted_at"
-    t.index ["title"], name: "index_articles_on_title"
+    t.index ["story_id"], name: "index_articles_on_story_id"
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(version: 20170225155843) do
     t.string   "selector"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_stories_on_title"
   end
 
   create_table "taggings", force: :cascade do |t|

@@ -1,16 +1,15 @@
 # == Schema Information
 #
-# Table name: blogs
+# Table name: stories
 #
 #  id         :integer          not null, primary key
 #  title      :string
-#  url        :string
-#  rss        :string
-#  selector   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Blog < ApplicationRecord
+class Story < ApplicationRecord
+  validates :title, presence: true
   has_many :articles
+  acts_as_taggable
 end
