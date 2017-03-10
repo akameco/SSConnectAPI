@@ -17,7 +17,7 @@ module V1
       end
 
       res = articles.includes(:blog).order('posted_at DESC').page(p)
-      render json: res, each_serializer: V1::ArticleSerializer, root: nil
+      render json: res, each_serializer: V1::ArticleSerializer
     end
   end
 end

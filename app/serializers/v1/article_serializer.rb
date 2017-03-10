@@ -1,11 +1,8 @@
 module V1
   class ArticleSerializer < ActiveModel::Serializer
-    attributes :id, :title, :blog_id, :posted_at, :url, :category_list
+    attributes :id, :posted_at, :url
 
     has_one :blog, serealizer: BlogSerializer
-
-    def articles_count
-      object.articles.count
-    end
+# has_one :story, serealizer: StorySerializer
   end
 end
