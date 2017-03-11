@@ -66,8 +66,10 @@ ActiveRecord::Schema.define(version: 20170225155843) do
 
   create_table "stories", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "last_posted_at"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["last_posted_at"], name: "index_stories_on_last_posted_at"
     t.index ["title"], name: "index_stories_on_title"
   end
 
