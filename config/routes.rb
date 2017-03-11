@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :blogs
     resources :stories
+    resources :tags
     get '*path', controller: 'application', action: 'render_404'
   end
 
