@@ -50,7 +50,7 @@ FactoryGirl.define do
       title 'えすえすmode'
       url 'http://blog.livedoor.jp/mode_ss/'
       rss 'http://blog.livedoor.jp/mode_ss/index.rdf'
-      selector '.time > a'
+      selector '.time > a:nth-of-type(2)'
     end
   end
 end

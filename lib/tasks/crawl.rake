@@ -16,7 +16,8 @@ namespace :crawl do
         )
         doc = Nokogiri::HTML(open(entry.url))
         next if doc.css(blog.selector)[0].nil? # TODO: Notification Selector invalid Erorr
-        if story.tag_list << doc.css(blog.selector)[0].text
+        tag = doc.css(blog.selector)[0].text
+        if story.tag_list << tag.split.first
           story.save
           p story.tag_list.join(', ')
         end
