@@ -43,7 +43,7 @@ group :development, :test do
   gem 'faker'
   gem 'ffaker'
   gem 'rspec-rails'
-	gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -54,11 +54,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'annotate'
-	gem 'bullet'
+  gem 'bullet'
 end
 
 group :production do
-	gem 'mysql2'
+  gem 'mysql2'
 end
 
 gem 'dotenv-rails'
