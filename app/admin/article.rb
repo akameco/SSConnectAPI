@@ -1,5 +1,11 @@
 ActiveAdmin.register Article do
   permit_params :url
+
+  controller do
+    def scoped_collection
+      Article.includes(:blog, :story)   # includes User / Brand models in listing products
+    end
+  end
   index do
     selectable_column
     id_column
