@@ -1,10 +1,11 @@
 namespace :sample do
   task :blog_insert => :environment do
-    Blog.create(:title => 'えすえすログ',:url => 'http://s2-log.com',:rss => 'http://s2-log.com/index.rdf',:selector => '.article-category1 > a')#0
-    Blog.create(:title => '森きのこ！',:url => 'http://morikinoko.com',:rss => 'http://morikinoko.com/index.rdf',:selector => '.article-category1 > a')#0
-    Blog.create(:title => 'あやめ速報',:url => 'http://ayamevip.com/',:rss => 'http://ayamevip.com/index.rdf',:selector => '.article-category > a')
-    Blog.create(:title => 'エレファント速報',:url => 'http://elephant.2chblog.jp/',:rss => 'http://elephant.2chblog.jp/index.rdf', :selector => '.iCategory > a')#1
-    Blog.create(:title => 'えすえすmode',:url => 'http://blog.livedoor.jp/mode_ss/',:rss => 'http://blog.livedoor.jp/mode_ss/index.rdf',:selector => '.time > a')#1
+    FactoryGirl.create(:blog_s2_log)
+    FactoryGirl.create(:blog_morikinoko)
+    FactoryGirl.create(:blog_ayamevip)
+    FactoryGirl.create(:blog_elephant)
+    FactoryGirl.create(:blog_mode_ss)
+    p "#{Blog.count} Blog Created."
   end
 
   task :faker_insert => :environment do
