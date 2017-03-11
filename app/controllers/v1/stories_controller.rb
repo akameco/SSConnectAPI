@@ -14,8 +14,11 @@ module V1
         stories = Story.where('title LIKE ?', "%#{q}%")
       end
 
+      #res = stories.includes(articles: [:blog]).includes([:taggings]).page(page)
       res = stories.includes(articles: [:blog]).page(page)
-      render json: res, include: [{articles: [:blog]}], each_serializer: V1::StorySerializer
+     # binding.pry
+      render json: res, each_serializer: V1::StorySerializer
+      #render json: res, include: [{articles: [:blog]}],include: [:tagging], each_serializer: V1::StorySerializer
     end
 
   end

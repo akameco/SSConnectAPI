@@ -8,6 +8,7 @@ ActiveAdmin.register Article do
     column :title
     column :url
     column :blog_id
+    column :story_id
     column :posted_at
     column :updated_at
     column :created_at
@@ -18,6 +19,7 @@ ActiveAdmin.register Article do
   filter :title
   filter :url
   filter :blog_id
+  filter :story_id
   filter :posted_at
   filter :updated_at
   filter :created_at

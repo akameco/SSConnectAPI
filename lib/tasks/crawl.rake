@@ -14,14 +14,22 @@ namespace :crawl do
             posted_at: entry.last_modified,
             blog: blog
         )
+        if story.last_posted_at.nil?
+          story.last_posted_at = entry.last_modified
+        else
+          story.last_posted_at = [story.last_posted_at,entry.last_modified].max
+        end
+        story.save
+        print(story.last_posted_at)
+
         doc = Nokogiri::HTML(open(entry.url))
         next if doc.css(blog.selector)[0].nil? # TODO: Notification Selector invalid Erorr
         tag = doc.css(blog.selector)[0].text
-        if story.tag_list << tag.split.first
-          story.save
-          p story.tag_list.join(', ')
-        end
+        story.tag_list << tag.split.first
+        story.save
+        p story.tag_list.join(', ')
       end
+
     end
   end
 end
